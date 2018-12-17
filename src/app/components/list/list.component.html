@@ -1,0 +1,129 @@
+<ng-container *ngIf="mostrar == false; then ver; else editar"></ng-container>
+
+<!-- cabezal sidebar -->
+<header class="list-header-container" >
+    <button (click)="hide()" class="list-header-tab">
+        <p class="">Listado de organizaciones</p>
+    </button>
+    <button class="list-header-tab">
+        <p class="">Editar organizaciones</p>
+    </button>
+</header>
+<ng-template #ver>
+    <section>
+
+      <!-- Listado -->
+      <ul *ngFor="let efector of efectores; let i = index">
+          <!-- Item listado -->
+          <li class="item">
+              <div class="item-bloque-titulo">
+                  <span class="badge">{{ efector.tipo }}</span>
+                  <h3 class="item-titulo">{{ efector.nombre }}</h3>
+                  <div class="item-bloque-subtitulo">
+                      <p class="item-subtitulo">{{ efector.fecha }} |</p>
+                      <p class="item-subtitulo {{efector.zona}}"> Zona {{ efector.zona }}</p>
+                  </div>     
+              </div>
+              
+              <div class="badge-modulos">{{ efector.modulos[0] }}</div>
+              <div class="badge-modulos">{{ efector.modulos[1] }}</div>
+              <div class="badge-modulos">{{ efector.modulos[2] }}</div>
+              <div class="badge-modulos">{{ efector.modulos[3] }}</div>
+
+
+              <!-- Muestra el icono del modulo activo en la organizacion -->
+              <i class="adi" [ngClass]="rup ? 'adi-rup-semantic-plan' : ''"></i>
+              <i class="adi" [ngClass]="citas ? 'adi-rup-semantic-trastorno' : ''"></i>
+              <i class="adi" [ngClass]="mpi ? 'adi-rup-semantic-organizaciono' : ''"></i>
+              <i class="adi" [ngClass]="top ? 'adi-rup-semantic-todos' : ''"></i>
+          </li>
+      </ul>
+    </section>
+</ng-template>
+
+<!-- editar organizacion -->
+<ng-template #editar>
+    <section>
+
+        <div class="card mt-5">
+            <div class="card-body">
+              <form #organizacionForm = "ngForm" (ngSubmit)="onSubmit(organizacionForm)">
+                <input type="hidden" class="form-control" name="$key" #$key="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.$key">        
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.nombre" placeholder="Agregue organizacion">        
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.ubicacion" placeholder="Agregue categoria">        
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="capacitados" #capacitados="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.capacitados" placeholder="Agregue cantidad de capacitados">
+                </div>
+                <!-- Select: TODO: Hacer el binding -->
+                <app-select>
+        
+                </app-select>
+              
+                <!-- Checkbox Modulos: TODO: Que el componente chekbox recorra un array de modulos y no las propiedades de un objeto -->
+                <div class="checkbox">
+                    <label for="">
+                    <!-- <label for="" *ngFor="let modulo of organizacionService.selectedOrganizacion.modulos"> -->
+                    <!-- <input type="checkbox" name="modulos" #modulos="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.modulos" >{{ modulo }} -->
+
+                    <input type="checkbox" name="mpi" #mpi="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.mpi" >{{ organizacionService.selectedOrganizacion.mpi }}
+                    <input type="checkbox" name="citas" #citas="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.citas" >{{ organizacionService.selectedOrganizacion.citas }}
+                    <input type="checkbox" name="rup" #rup="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.rup" >{{ organizacionService.selectedOrganizacion.rup }}
+                    <input type="checkbox" name="top" #top="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.top" >{{ organizacionService.selectedOrganizacion.top }}
+                  </label>
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-plus-circle"></i>Agregar</button>
+                    <button class="btn btn-secondary" type="reset" (click)="resetForm(organizacionForm)"><i class="fas fa-sync-alt"></i>Reset</button>
+                </div>
+
+                <br>
+                  <pre>
+                    {{ organizacionForm.value | json }}
+                  </pre>
+                <br>
+
+
+              </form>
+            </div>
+          </div>
+        <hr>
+<!-- Listado -->
+<div class="card">
+    <div class="card-body">
+      <h6 class="text-center">Organizaciones</h6>
+
+      <!-- Busqueda & Filtro -->
+      <input type="text" class="form-control" placeholder="Buscar o filtrar organizaciones" [(ngModel)]="searchTerm"/>
+      
+      <table class="table table-sm table-hover">
+        <tbody>
+          <tr *ngFor="let organizacion of organizacionList | organizacion: searchTerm">
+            <td>{{ organizacion.nombre }}</td>
+            <td>{{ organizacion.ubicacion }}</td>
+            <td>{{ organizacion.capacitados }}</td>
+            <!-- Binding de iconos -->
+            <td><i class="adi" [ngClass]="organizacion.mpi ? 'adi-rup-semantic-plan' : ''"></i></td>
+            <td><i class="adi" [ngClass]="organizacion.citas ? 'adi-rup-semantic-trastorno' : ''"></i></td>
+            <td><i class="adi" [ngClass]="organizacion.rup ? 'adi-rup-semantic-hallazgo' : ''"></i></td>
+            <td><i class="adi" [ngClass]="organizacion.top ? 'adi-rup-semantic-producto' : ''"></i></td>
+            <td>
+              <button href="" class="btn btn-secondary text-white" (click)="onEdit(organizacion)">
+                EDITAR
+              </button>
+              <button (click)="onDelete(organizacion.$key)">
+                BORRAR
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+    </section>
+</ng-template>

@@ -1,0 +1,18 @@
+<li class="item">
+  <div class="item-bloque-titulo">
+      <span class="badge">{{ organizacion.tipo }}</span>
+      <h3 class="item-titulo">{{ organizacion.nombre }}</h3>
+      <div class="item-bloque-subtitulo">
+          <p class="item-subtitulo">{{ organizacion.fecha }} |</p>
+          <p class="item-subtitulo {{organizacion.zona}}"> Zona {{ organizacion.zona }}</p>
+      </div>     
+  </div>
+
+  <div class="badge-modulos">{{ organizacion.modulos[0] }}</div>
+  <div class="badge-modulos">{{ organizacion.modulos[1] }}</div>
+  <div class="badge-modulos">{{ organizacion.modulos[2] }}</div>
+  <div class="badge-modulos">{{ organizacion.modulos[3] }}</div>
+
+<!-- Muestra el icono del modulo activo en la organizacion -->
+    <i class="adi" [ngClass]=" rup ? 'adi-rup-semantic-plan' : '' "></i>
+</li>

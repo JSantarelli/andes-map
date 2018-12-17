@@ -1,0 +1,9 @@
+<form  [formGroup]="form" #organizacionForm = "ngForm" (ngSubmit)="onSubmit(organizacionForm)">
+  <select formControlName="modulo" >
+    <option *ngFor="let modulo of modulos" [ngValue]="modulo" >
+      {{ modulo.abbrev }}
+    </option>
+  </select>
+</form>
+
+ <p>{{ form.value | json }}</p> 

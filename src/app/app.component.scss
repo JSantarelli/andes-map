@@ -1,0 +1,40 @@
+@import './src/assets/scss/_variables.scss';
+
+// Globales
+body {
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+// Layouting
+main.contenedor {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 20% 80%;
+    // grid-gap: 12px;
+
+    section.navbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        background-color: $andes-azul-oscuro;
+        color: $andes-azul-oscuro;
+    }
+    
+    section.contenedor-principal {
+        grid-column: 1 / 8;
+        grid-row: 2;
+        
+        padding: $padding;
+    }
+    
+    section.contenedor-lateral {
+        grid-column: 9 / -1;
+        grid-row: 2;
+    }
+
+}
+
