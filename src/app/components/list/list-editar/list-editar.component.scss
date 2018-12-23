@@ -1,0 +1,30 @@
+@import './src/assets/scss/_variables.scss';
+
+fieldset {
+    position: relative;
+
+    input, select {
+
+        &[type=text] {
+            margin-top: 1rem;
+            width: 100%;
+        }
+    
+        &[type=checkbox].input-modulo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            
+            cursor: pointer;
+    
+            opacity: 0; /* oculto el check para elegir el modulo */
+            z-index: 2; 
+            color: $andes-azul;
+            background-color: $andes-magenta; 
+        }
+    }
+}
+

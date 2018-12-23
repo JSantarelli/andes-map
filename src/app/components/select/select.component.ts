@@ -14,20 +14,13 @@ import { OrganizacionService } from '../../../services/organizacion.service';
 export class SelectComponent {
 
   organizacionList: Organizacion[];
-
-  modulos = [
-    {name: 'Master Pacient Index', abbrev: 'MPI'},
-    {name: 'Centro Inteligente de Turnos y Agendas de Salud', abbrev: 'CITAS'},
-    {name: 'Registro Universal de Prestaciones', abbrev: 'RUP'},
-    {name: 'Transito Ordenado de Pacientes', abbrev: 'TOP'},
-    {name: 'Matriculaciones', abbrev: 'MAT'},
-  ];
  
   form = new FormGroup({
-    modulo: new FormControl(this.modulos[3]),
+    municipio: new FormControl(this.organizacionService.selectedOrganizacion.ubicacion[3]),
   });
 
 
+  
   constructor( private organizacionService: OrganizacionService) { }
 
 

@@ -16,10 +16,14 @@ import { MapComponent } from './components/map/map.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list/list-item/list-item.component';
 import { ListHeaderComponent } from './components/list/list-header/list-header.component';
-import { OrganizacionService } from 'src/services/organizacion.service';
+import { ListEditarComponent } from './components/list/list-editar/list-editar.component';
+
 import { SelectComponent } from './components/select/select.component';
-import { OrganizacionPipe } from './organizacion.pipe';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+
+// Pipe y servicios
+import { OrganizacionService } from 'src/services/organizacion.service';
+import { OrganizacionPipe } from './organizacion.pipe';
 
 
 @NgModule({
@@ -29,6 +33,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     ListComponent,
     ListItemComponent,
     ListHeaderComponent,
+    ListEditarComponent,
     SelectComponent,
     OrganizacionPipe,
     CheckboxComponent

@@ -23,8 +23,9 @@ export class OrganizacionService {
   {
     this.organizacionList.push( {
       nombre: organizacion.nombre,
-      ubicacion: organizacion.ubicacion,
+      ubicacion: this.selectedOrganizacion.ubicacion.municipios,
       capacitados: organizacion.capacitados,
+      tipo: organizacion.tipo,
       mpi: organizacion.mpi,
       citas: organizacion.citas,
       rup: organizacion.rup,
@@ -37,13 +38,14 @@ updateOrganizacion(organizacion: Organizacion)
   this.organizacionList.update(
     organizacion.$key, {
       nombre: organizacion.nombre,
-      ubicacion: organizacion.ubicacion,
+      // ubicacion: this.selectedOrganizacion.ubicacion.municipios,
       capacitados: organizacion.capacitados,
+      tipo: organizacion.tipo,
       mpi: organizacion.mpi,
       citas: organizacion.citas,
       rup: organizacion.rup,
       top: organizacion.top
-        });
+    });
 }
 
 deleteOrganizacion($key: string)

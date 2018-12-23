@@ -1,7 +1,8 @@
+<!-- Select: TODO: Agregar array de municipios de nqn al objeto o geocoding con libreria google-maps -->
 <form  [formGroup]="form" #organizacionForm = "ngForm" (ngSubmit)="onSubmit(organizacionForm)">
-  <select formControlName="modulo" >
-    <option *ngFor="let modulo of modulos" [ngValue]="modulo" >
-      {{ modulo.abbrev }}
+  <select formControlName="municipio" >
+    <option *ngFor="let municipio of organizacionService.selectedOrganizacion.ubicacion.municipios" [ngValue]="municipio" >
+      {{ municipio.nombre }}
     </option>
   </select>
 </form>

@@ -32,8 +32,14 @@ main.contenedor {
     }
     
     section.contenedor-lateral {
-        grid-column: 9 / -1;
+        grid-column: 8 / -1;
         grid-row: 2;
+
+        > app-list  {
+            display: flex;
+            flex-direction: column-reverse;
+                
+        }
     }
 
 }

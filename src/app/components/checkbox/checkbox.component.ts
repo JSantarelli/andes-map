@@ -12,7 +12,7 @@ export class CheckboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.modulos = ['MPI' , 'RUP' , 'TOP'];
+    // this.modulos = ['MPI' , 'RUP' , 'TOP'];
   }
 
 }

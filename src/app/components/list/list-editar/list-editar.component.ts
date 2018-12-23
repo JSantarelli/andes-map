@@ -1,75 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+
+import { NgForm } from '@angular/forms';
 
 // Servicio
-import { OrganizacionService } from '../../../services/organizacion.service';
+import { OrganizacionService } from '../../../../services/organizacion.service';
 
 // Class Organizacion
-import { Organizacion } from '../../../models/organizacion';
+import { Organizacion } from '../../../../models/organizacion';
 
 // Componentes
-import { SelectComponent } from '../select/select.component';
-import { ListEditarComponent  } from '../list/list-editar/list-editar.component';
-
+import { SelectComponent } from '../../select/select.component';
 
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-list-editar',
+  templateUrl: './list-editar.component.html',
+  styleUrls: ['./list-editar.component.scss']
 })
 
-export class ListComponent implements OnInit {
 
-  // Binding modulos e insercion en Firebase
+export class ListEditarComponent implements OnInit {
   
+  
+  // Binding modulos e insercion en Firebase
   organizacionList: Organizacion[];
   select = SelectComponent;
   editar = ListEditarComponent;
 
   searchTerm: string;
 
-  
 // Hardcoding
   mostrar = false;
 
   hide() {
-    this.mostrar = false;
+    this.mostrar = !this.mostrar;
   }
-
-  show() {
-    this.mostrar = true;
-  }
-
-  // Objetos
-  efectores = [
-    { 
-      'nombre' : 'Hospital Heller',
-      'fecha' : '15/04/2018',
-      'tipo' : 'Hospital',
-      'modulos' : [ 'rup' , 'citas' , 'mpi' , 'top' ],
-      'zona' : 'metropolitana',
-    },
-
-    { 
-      'nombre' : 'Progreso',
-      'fecha' : '07/09/2017',
-      'tipo' : 'Centro de Salud',
-      'modulos' : [ 'mpi' , 'top' ],
-      'zona' : 'tres',
-    },
-
-    { 
-      'nombre' : 'Sapere',
-      'fecha' : '25/01/2018',
-      'tipo' : 'Sala de primeros auxilios',
-      'modulos' : [ 'rup' , 'mpi' , 'top' ],
-      'zona' : 'uno',
-    }
-  ]
 
   constructor( private organizacionService: OrganizacionService) { }
 
+  
   ngOnInit() {
 
     this.organizacionService.getOrganizaciones();
@@ -86,7 +55,6 @@ export class ListComponent implements OnInit {
       })
     }) 
   }
-
   
   onSubmit(organizacionForm: NgForm) {
     if(organizacionForm.value.$key == null)
@@ -114,6 +82,4 @@ export class ListComponent implements OnInit {
       this.organizacionService.deleteOrganizacion($key);
     }
   }
-  
 }
-
