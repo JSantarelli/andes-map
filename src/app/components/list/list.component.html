@@ -23,7 +23,8 @@
                   <div class="item-titulo">{{ organizacion.nombre }}</div>
 
                     <div class="item-bloque-subtitulo">
-                      <!-- <p class="item-subtitulo">{{ organizacionService.selectedOrganizacion.ubicacion.municipios[1].nombre }}</p> -->
+                      <!-- Al mostrar la ubicacion se rompe el listado -->
+                      <p class="item-subtitulo">{{ organizacion.ubicacion }}</p>
                       <p>{{ organizacion.capacitados }}</p>
                     </div>
                 </div>

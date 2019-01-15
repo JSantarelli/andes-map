@@ -7,11 +7,19 @@
           <input type="hidden" class="input-modulo" name="$key" #$key="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.$key">        
           <input type="text" class="input-modulo" name="nombre" #nombre="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.nombre" placeholder="Agregue organizacion" >        
           <input type="text" class="input-modulo" name="capacitados" #capacitados="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.capacitados" placeholder="Agregue cantidad de capacitados">
-          <input type="text" class="input-modulo" name="tipo" #tipo="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.tipo  " placeholder="seleccione tipo de organizacion">        
-              
-          <app-select>
+          <input type="text" class="input-modulo" name="tipo" #tipo="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.tipo" placeholder="seleccione tipo de organizacion">        
+          <!-- <input type="text" class="input-modulo" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.ubicacion" placeholder="indique municipio"> -->
 
-          </app-select>
+
+          <!-- select de ciudades  -->
+            <label for="">Municipio</label>
+            <select class="form-control" id="ubicacion" [(ngModel)]="ubicacion.nombre" name="ubicacion" #ubicacion="ngModel" >
+              <option *ngFor="let ubicacion of organizacionService.ubicaciones" [value]="ubicacion.nombre">
+                {{ ubicacion.nombre }}
+              </option> 
+            </select>
+            
+            <div>{{ organizacionForm.value | json }}</div>
 
       </fieldset>
 

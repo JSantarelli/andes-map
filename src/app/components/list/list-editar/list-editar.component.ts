@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl } from '@angular/forms';
 
 // Servicio
 import { OrganizacionService } from '../../../../services/organizacion.service';
@@ -21,6 +21,18 @@ import { SelectComponent } from '../../select/select.component';
 
 export class ListEditarComponent implements OnInit {
   
+  // Select
+  selectUbicacion = "";
+
+  CambiarUbicacion(e) {
+    this.selectUbicacion = e;
+    console.log(e);
+  }
+
+  form = new FormGroup({
+    ubicacion: new FormControl(this.organizacionService.selectedOrganizacion.ubicacion),
+  });
+
   
   // Binding modulos e insercion en Firebase
   organizacionList: Organizacion[];
