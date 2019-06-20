@@ -6,52 +6,49 @@ import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from "../environments/environment";
-
-// Mapa
-import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { AppRoutingModule } from './app-routing.module';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { MapComponent } from './components/map/map.component';
-import { ListComponent } from './components/list/list.component';
-import { ListItemComponent } from './components/list/list-item/list-item.component';
-import { ListHeaderComponent } from './components/list/list-header/list-header.component';
-import { ListEditarComponent } from './components/list/list-editar/list-editar.component';
+import { InicioComponent } from './secciones/inicio/inicio.component';
+import { ListadoComponent } from './secciones/listado/listado.component';
+import { DetalleComponent } from './secciones/detalle/detalle.component';
+import { EdicionComponent } from './secciones/edicion/edicion.component';
+import { LoginComponent } from './secciones/login/login.component';
+import { ListaComponent } from './componentes/lista/lista.component';
+import { MapaComponent } from './componentes/mapa/mapa.component';
+import { FrisoComponent } from './componentes/friso/friso.component';
+import { ItemComponent } from './componentes/lista/item/item.component';
 
-import { SelectComponent } from './components/select/select.component';
-import { CheckboxComponent } from './components/checkbox/checkbox.component';
-
-// Pipe y servicios
-import { OrganizacionService } from 'src/services/organizacion.service';
-import { OrganizacionPipe } from './organizacion.pipe';
-
+// Pipe & Servicios
+import { OrganizacionPipe } from '../pipes/organizacion.pipe';
+import { OrganizacionService } from '../servicios/organizacion.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent,
-    ListComponent,
-    ListItemComponent,
-    ListHeaderComponent,
-    ListEditarComponent,
-    SelectComponent,
-    OrganizacionPipe,
-    CheckboxComponent
+    InicioComponent,
+    ListadoComponent,
+    DetalleComponent,
+    EdicionComponent,
+    LoginComponent,
+    ListaComponent,
+    MapaComponent,
+    FrisoComponent,
+    ItemComponent,
+    OrganizacionPipe
   ],
   imports: [
     BrowserModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyC6SaAn0y1YOH4dnXtJIvwlK0D9SnSudPw'}), 
+    AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     ReactiveFormsModule
   ],
-    
   providers: [
-    GoogleMapsAPIWrapper,
     OrganizacionService
   ],
-  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

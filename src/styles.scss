@@ -1,4 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
-$adi-font-path: '~@andes/icons/fonts/';
-@import '~@andes/icons/scss/andes-icons';
+// $adi-font-path: '~@andes/icons/iconos/';
+// @import '~@andes/icons/scss/andes-icons';
+
+// ANDES - Icons
+@import './assets/iconos/andes-font.css';
+
+@import './src/assets/scss/_variables.scss';
+
+// Globales
+body {
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+// Tipografia
+label {
+    display: block;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+// Layouting
+main.contenedor {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 5% 95%;
+    // grid-gap: 12px;
+
+    section.navbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        background-color: $andes-azul-oscuro;
+        color: $andes-azul-oscuro;
+    }
+    
+    section.contenedor-principal {
+        grid-column: 1 / 8;
+        grid-row: 2;
+        
+        padding: $padding;
+    }
+    
+    section.contenedor-lateral {
+        grid-column: 8 / -1;
+        grid-row: 2;
+
+        > app-list  {
+            display: flex;
+            flex-direction: column-reverse;
+                
+        }
+    }
+
+}
 
