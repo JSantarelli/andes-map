@@ -1,14 +1,11 @@
 export class Organizacion { 
-  id: number;
   $key: string;
   nombre: string;
-  tipo: string;
   ubicacion: string;
-  lat: number;
-  lng: number;
+  tipo: string;
   capacitados: number;
   mpi: boolean;
-  citas: boolean;
   rup: boolean;
+  citas: boolean;
   top: boolean;
 }

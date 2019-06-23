@@ -1,0 +1,8 @@
+<!-- select de ciudades  -->
+<label for="">Municipio</label>
+<select formControlName="ubicacion" name="ubicacion" >
+  <option *ngFor="let ubicacion of organizacionService.ubicaciones" [value]="ubicacion.nombre">
+  {{ ubicacion.nombre }}
+  </option>
+</select>
+

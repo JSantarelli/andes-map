@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl } from '@angular/forms';
 
 // Servicio
 import { OrganizacionService } from '../../../servicios/organizacion.service';
@@ -20,14 +20,22 @@ export class EdicionComponent implements OnInit {
   organizacionList: Organizacion[];
   editar = ListadoComponent;
   organizacionSeleccionada = null;
-
+  organizacionForm = new FormGroup({
+    '$key': new FormControl(),
+    'nombre': new FormControl(),
+    'capacitados': new FormControl(),
+    'tipo': new FormControl(),
+    'mpi': new FormControl(),
+    'rup': new FormControl(),
+    'citas': new FormControl(),
+    'top': new FormControl()
+  })
   searchTerm: string;
 
   constructor( private organizacionService: OrganizacionService) { }
 
   
   ngOnInit() {
-
     this.organizacionService.getOrganizaciones();
     this.resetForm();
 

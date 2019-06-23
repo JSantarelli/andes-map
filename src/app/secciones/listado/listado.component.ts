@@ -15,6 +15,8 @@ export class ListadoComponent implements OnInit {
   // Hardcoding
   mostrar = false;
 
+  modulos = [ 'mpi' , 'citas' , 'rup' , 'top' ];
+
   hide() {
     this.mostrar = false;
   }

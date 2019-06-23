@@ -1,22 +1,16 @@
 <section>
-  <form #organizacionForm = "ngForm" (ngSubmit)="onSubmit(organizacionForm)">
+  <form [formGroup]="organizacionForm" (ngSubmit)="onSubmit(organizacionForm)">
     <fieldset>
-      <legend>Informacion basica</legend>
-        <input type="hidden" class="input-modulo" name="$key" #$key="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.$key">        
-        <input type="text" class="input-modulo" name="nombre" #nombre="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.nombre" placeholder="Agregue organizacion" >        
-        <input type="number" class="input-modulo" name="capacitados" #capacitados="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.capacitados" placeholder="Agregue cantidad de capacitados">
-        <input type="text" class="input-modulo" name="tipo" #tipo="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.tipo" placeholder="seleccione tipo de organizacion">        
-        <!-- <input type="text" class="input-modulo" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.ubicacion" placeholder="indique municipio"> -->
+     <legend>Informacion basica</legend>
+        <input type="hidden" formControlName="$key" name="$key" >
+        <input type="text" formControlName="nombre" name="nombre" >
+        <input type="text" formControlName="tipo" placeholder="seleccione tipo de organizacion" name="tipo" >
+        <input type="number" formControlName="capacitados" placeholder="Agregue cantidad de capacitados" name="capacitados" >
 
-        <!-- select de ciudades  -->
-          <label for="">Municipio</label>
-          <select class="form-control" id="ubicacion" [(ngModel)]="organizacionService.selectedOrganizacion.ubicacion" name="ubicacion" #ubicacion="ngModel" >
-            <option *ngFor="let ubicacion of organizacionService.ubicaciones" [value]="ubicacion.nombre" (click)="orgSeleccionada(resultado)">
-            {{ ubicacion.nombre }}
-            </option>
-          </select>
-          <input type="number" class="input-modulo" name="lat" #lat="ngModel" [value]="ubicacion.lat" [(ngModel)]="organizacionService.selectedOrganizacion.lat" placeholder="latitud">        
-          <input type="number" class="input-modulo" name="lng" #lng="ngModel" [value]="ubicacion.lng" [(ngModel)]="organizacionService.selectedOrganizacion.lng" placeholder="longitud">        
+        <!-- Select Municipios -->
+        <app-select>
+
+        </app-select>
 
           <div>{{ organizacionForm.value | json }}</div>
     </fieldset>
@@ -25,12 +19,10 @@
     <fieldset class="checkbox">
         <legend>Seleccione los modulos implementados en la organizacion</legend>
         <!-- <label for="" *ngFor="let modulo of organizacionService.selectedOrganizacion.modulos"> -->
-        <!-- <input type="checkbox" name="modulos" #modulos="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.modulos" >{{ modulo }} -->
-
-        <i class="adi adi-rup-semantic-plan"></i><input type="checkbox" class="input-modulo" name="mpi" #mpi="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.mpi" value="false" > {{ organizacionService.selectedOrganizacion.mpi }} 
-        <input type="checkbox" name="citas" #citas="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.citas" value="false" >{{ organizacionService.selectedOrganizacion.citas }}
-        <input type="checkbox" name="rup" #rup="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.rup" value="false" >{{ organizacionService.selectedOrganizacion.rup }}
-        <input type="checkbox" name="top" #top="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.top" value="false" >{{ organizacionService.selectedOrganizacion.top }}
+        <i class="adi icon-mano-corazon"></i><input type="checkbox" name="mpi" formControlName="mpi" value="false" >{{ organizacionService.selectedOrganizacion.mpi }} 
+        <input type="checkbox" name="citas" formControlName="citas" value="false" >{{ organizacionService.selectedOrganizacion.citas }}
+        <input type="checkbox" name="rup" formControlName="rup" value="false" >{{ organizacionService.selectedOrganizacion.rup }}
+        <input type="checkbox" name="top" formControlName="top" value="false" >{{ organizacionService.selectedOrganizacion.top }}
     </fieldset>
     <div>
         <button class="btn btn-primary" type="submit">Agregar</button>
