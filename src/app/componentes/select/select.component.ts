@@ -15,7 +15,6 @@ export class SelectComponent implements OnInit {
 
   constructor(private organizacionService : OrganizacionService, private parentF: FormGroupDirective) {
     this.ubicaciones = organizacionService.getUbicaciones();
-
    }
 
   ngOnInit() {

@@ -1,0 +1,8 @@
+<!-- Checkbox Modulos: TODO: Que el componente chekbox recorra un array de modulos y no las propiedades de un objeto -->
+
+<legend>Seleccione los modulos implementados en la organizacion</legend>
+<!-- <label for="" *ngFor="let modulo of organizacionService.selectedOrganizacion.modulos"> -->
+<i class="adi icon-mano-corazon"></i><input type="checkbox" name="mpi" formControlName="mpi" value="false" >{{ organizacionService.selectedOrganizacion.mpi }} 
+<input type="checkbox" name="citas" formControlName="citas" value="false" >{{ organizacionService.selectedOrganizacion.citas }}
+<input type="checkbox" name="rup" formControlName="rup" value="false" >{{ organizacionService.selectedOrganizacion.rup }}
+<input type="checkbox" name="top" formControlName="top" value="false" >{{ organizacionService.selectedOrganizacion.top }}

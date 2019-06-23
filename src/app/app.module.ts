@@ -23,7 +23,8 @@ import { ItemComponent } from './componentes/lista/item/item.component';
 // Pipe & Servicios
 import { OrganizacionPipe } from '../pipes/organizacion.pipe';
 import { OrganizacionService } from '../servicios/organizacion.service';
-import { SelectComponent } from './componentes/select/select.component'
+import { SelectComponent } from './componentes/select/select.component';
+import { CheckboxComponent } from './componentes/checkbox/checkbox.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SelectComponent } from './componentes/select/select.component'
     FrisoComponent,
     ItemComponent,
     OrganizacionPipe,
-    SelectComponent
+    SelectComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
