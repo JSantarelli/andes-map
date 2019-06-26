@@ -20,6 +20,8 @@ export class SelectComponent implements OnInit {
   ngOnInit() {
     this.childForm = this.parentF.form;
     this.childForm.addControl('ubicacion' , new FormControl(''))
+    this.childForm.addControl('lat' , new FormControl(''))
+    this.childForm.addControl('lng' , new FormControl(''))
   }
 
 }

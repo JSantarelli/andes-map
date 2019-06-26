@@ -24,7 +24,8 @@ import { ItemComponent } from './componentes/lista/item/item.component';
 import { OrganizacionPipe } from '../pipes/organizacion.pipe';
 import { OrganizacionService } from '../servicios/organizacion.service';
 import { SelectComponent } from './componentes/select/select.component';
-import { CheckboxComponent } from './componentes/checkbox/checkbox.component'
+import { CheckboxComponent } from './componentes/checkbox/checkbox.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import { CheckboxComponent } from './componentes/checkbox/checkbox.component'
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBRVMV1sSrmpq_MeeVsosxwMKZ-xrOl8Co',
+   })
   ],
   providers: [
     OrganizacionService

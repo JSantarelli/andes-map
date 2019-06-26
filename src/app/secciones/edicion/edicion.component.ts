@@ -28,11 +28,13 @@ export class EdicionComponent implements OnInit {
     'mpi': new FormControl(),
     'rup': new FormControl(),
     'citas': new FormControl(),
-    'top': new FormControl()
+    'top': new FormControl(),
+    'lat': new FormControl(),
+    'lng': new FormControl()
   })
   searchTerm: string;
 
-  constructor( private organizacionService: OrganizacionService) { }
+  constructor(private organizacionService: OrganizacionService) { }
 
   
   ngOnInit() {

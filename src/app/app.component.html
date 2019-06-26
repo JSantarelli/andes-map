@@ -1,6 +1,11 @@
 <app-friso>
-  
+
 </app-friso>
+
 <router-outlet>
-  
+    <agm-map [latitude]="lat" [longitude]="lng" [styles]="estilosMapa">
+        <ng-container *ngFor="let organizacion of organizacionList">
+            <agm-marker [latitude]="organizacion.lat" [longitude]="organizacion.lng"></agm-marker>
+        </ng-container>
+    </agm-map>
 </router-outlet>

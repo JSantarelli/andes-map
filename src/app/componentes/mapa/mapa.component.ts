@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
   styleUrls: ['./mapa.component.scss']
 })
-export class MapaComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+// TODO: Comunicar componente map con componente padre a traves de un servicio
+export class MapaComponent {
 
 }

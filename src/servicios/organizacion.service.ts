@@ -13,19 +13,27 @@ export class OrganizacionService { private router: Router
   ubicaciones: any[] = [
       {
         id: 580147,
-        nombre: 'Huinganco'
+        nombre: 'Huinganco',
+        lat: -37.1604681,
+        lng: -70.6314227
       },
       {
         id: 580210,
-        nombre: 'Rincón de los Sauces'
+        nombre: 'Rincón de los Sauces',
+        lat: -37.396749,
+        lng: -68.9470692
       },
       {
         id: 580238,
-        nombre: 'Mariano Moreno'
+        nombre: 'Mariano Moreno',
+        lat: -38.7628129,
+        lng: -70.0471431
       },
       {
         id: 585112,
-        nombre: 'El Sauce'
+        nombre: 'El Sauce',
+        lat: -38.9377202,
+        lng: -68.0837026
       },
       {
         id: 580042,
@@ -276,6 +284,8 @@ export class OrganizacionService { private router: Router
       this.organizacionList.push( {
         nombre: organizacion.nombre,
         ubicacion: organizacion.ubicacion,
+        lat: organizacion.lat,
+        lng: organizacion.lng,
         tipo: organizacion.tipo,
         capacitados: organizacion.capacitados,
         mpi: organizacion.mpi,
@@ -291,6 +301,8 @@ export class OrganizacionService { private router: Router
       organizacion.$key, {
         nombre: organizacion.nombre,
         ubicacion: organizacion.ubicacion,
+        lat: organizacion.lat,
+        lng: organizacion.lng,
         tipo: organizacion.tipo,
         capacitados: organizacion.capacitados,
         mpi: organizacion.mpi,
