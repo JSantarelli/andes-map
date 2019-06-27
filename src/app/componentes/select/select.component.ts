@@ -11,7 +11,8 @@ import { FormGroupDirective, ControlContainer, FormControl } from '@angular/form
 export class SelectComponent implements OnInit {
   childForm;
   ubicaciones: any[] = [];
-
+  dato: number;
+  
 
   constructor(private organizacionService : OrganizacionService, private parentF: FormGroupDirective) {
     this.ubicaciones = organizacionService.getUbicaciones();
@@ -24,4 +25,9 @@ export class SelectComponent implements OnInit {
     this.childForm.addControl('lng' , new FormControl(''))
   }
 
+  mostrarDato() {
+    this.dato = 4;
+    console.log(this.dato);
+  }
+ 
 }

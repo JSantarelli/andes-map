@@ -8,7 +8,6 @@ import { DetalleComponent } from './secciones/detalle/detalle.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '' , component: AppComponent },
   { path: 'inicio' , component: InicioComponent , 
     children: [
       { path: 'zonaSeleccionada' , component: ItemComponent }
