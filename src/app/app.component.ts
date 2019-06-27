@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { OrganizacionService } from '../servicios/organizacion.service';
 import { Organizacion } from '../modelos/organizacion';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,21 @@ export class AppComponent {
   title = 'andes-maap';
   organizacionList: Organizacion[];
   
-  constructor(private organizacionService: OrganizacionService, ) {
-    this.organizacionList = this.organizacionService.getUbicaciones()
+  constructor(private organizacionService: OrganizacionService, private firebase: AngularFireDatabase) {
+  }
+
+  ngOnInit() {
+    
+    this.organizacionService.getOrganizaciones()
+    .snapshotChanges()
+    .subscribe(Item => {
+      this.organizacionList = [];
+      Item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.organizacionList.push(x as Organizacion);
+      })
+    }) 
   }
 
   // google maps zoom level
@@ -47,18 +62,6 @@ export class AppComponent {
 		  lat: 45.673858,
 		  lng: 17.815982,
 		  label: 'A',
-		  draggable: true
-	  },
-	  {
-		  lat: 25.373858,
-		  lng: 37.215982,
-		  label: 'B',
-		  draggable: false
-	  },
-	  {
-		  lat: 56.723858,
-		  lng: 27.895982,
-		  label: 'C',
 		  draggable: true
 	  }
   ]

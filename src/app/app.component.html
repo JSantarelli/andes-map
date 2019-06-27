@@ -5,7 +5,15 @@
 <router-outlet>
     <agm-map [latitude]="lat" [longitude]="lng" [styles]="estilosMapa">
         <ng-container *ngFor="let organizacion of organizacionList">
-            <agm-marker [latitude]="organizacion.lat" [longitude]="organizacion.lng"></agm-marker>
+            <agm-marker [latitude]="organizacion.ubicacion.lat" [longitude]="organizacion.ubicacion.lng">
+
+                <agm-info-window [disableAutoPan]="true">
+                    {{ organizacion.nombre }}
+                    {{ organizacion.capacitados }}
+                    {{ organizacion.rup }}
+                  </agm-info-window>
+
+            </agm-marker>
         </ng-container>
     </agm-map>
 </router-outlet>
