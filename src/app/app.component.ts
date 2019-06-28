@@ -13,7 +13,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 
 export class AppComponent {
-  title = 'andes-maap';
+  title = 'andes-map';
   organizacionList: Organizacion[];
   
   constructor(private organizacionService: OrganizacionService, private firebase: AngularFireDatabase) {

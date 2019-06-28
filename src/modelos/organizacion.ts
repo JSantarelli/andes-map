@@ -6,6 +6,7 @@ export class Organizacion {
   lng: number;
   tipo: string;
   capacitados: number;
+  modulo: string;
   mpi: boolean;
   rup: boolean;
   citas: boolean;
