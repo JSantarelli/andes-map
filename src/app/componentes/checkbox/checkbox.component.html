@@ -1,6 +1,11 @@
-<!-- Checkbox Modulos: TODO: Que el componente chekbox recorra un array de modulos y no las propiedades de un objeto -->
-
 <legend>Seleccione los modulos implementados en la organizacion</legend>
-<label *ngFor="let modulo of organizacionService.modulos">
-<input type="checkbox" name="{{modulo.iniciales}}" formControlName="{{modulo.iniciales}}" value="modulo" >{{ organizacionService.selectedOrganizacion.iniciales }}
-</label>
+    <label *ngFor="let modulo of organizacionService.modulos">
+        <input type="checkbox" name="{{modulo.iniciales}}" formControlName="{{modulo.iniciales}}" value="modulo" >{{ organizacionService.selectedOrganizacion.iniciales }}
+    </label>
+    
+<!-- <form [formGroup]="modulosForm" >
+    <legend>Seleccione los modulos implementados en la organizacion</legend>
+    <label formArrayName="modulos" *ngFor="let iniciales of modulosForm.controls['modulos'].controls; let i = index">
+    <input type="checkbox" [formControlName]="i">{{ modulos[i].iniciales }}
+    </label>
+</form> -->

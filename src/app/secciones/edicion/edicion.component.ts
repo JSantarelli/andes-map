@@ -25,10 +25,11 @@ export class EdicionComponent implements OnInit {
     'nombre': new FormControl(),
     'capacitados': new FormControl(),
     'tipo': new FormControl(),
+    'modulos': new FormControl(),
     'mpi': new FormControl(),
     'rup': new FormControl(),
-    'citas': new FormControl(),
     'top': new FormControl(),
+    'citas': new FormControl(),
     'lat': new FormControl(),
     'lng': new FormControl()
   })

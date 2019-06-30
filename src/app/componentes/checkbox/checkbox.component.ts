@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrganizacionService } from 'src/servicios/organizacion.service';
-import { FormControl, FormGroupDirective, ControlContainer } from '@angular/forms';
+import { FormControl, FormGroupDirective, ControlContainer, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
@@ -10,25 +10,28 @@ import { FormControl, FormGroupDirective, ControlContainer } from '@angular/form
 })
 export class CheckboxComponent implements OnInit {
   childForm;
+  modulosForm: FormGroup;
   modulos: any[] = [];
 
-  constructor( private organizacionService: OrganizacionService, private parentF: FormGroupDirective ) {
+  constructor( private organizacionService: OrganizacionService, private parentF: FormGroupDirective, private fb: FormBuilder ) {
     this.modulos = organizacionService.getModulos();
+    const FormControls = this.modulos.map(control => new FormControl(false));
+
+    this.modulosForm = this.fb.group({
+      modulos: new FormArray(FormControls)
+    });
+  }
+
+  submit() {
+
   }
 
   ngOnInit() {
     this.childForm = this.parentF.form;
-    this.childForm.addControl('modulo' , new FormControl(''))
+    this.childForm.addControl('modulos' , new FormControl(''))
     this.childForm.addControl('mpi' , new FormControl(''))
-    this.childForm.addControl('rup' , new FormControl(''))
-    this.childForm.addControl('citas' , new FormControl(''))
     this.childForm.addControl('top' , new FormControl(''))
-    this.childForm.addControl('huds' , new FormControl(''))
-    this.childForm.addControl('mas' , new FormControl(''))
-    this.childForm.addControl('pres' , new FormControl(''))
-    this.childForm.addControl('silab' , new FormControl(''))
-    this.childForm.addControl('sir' , new FormControl(''))
-    this.childForm.addControl('aps' , new FormControl(''))
+    this.childForm.addControl('citas' , new FormControl(''))
+    this.childForm.addControl('rup' , new FormControl(''))
   }
-
 }

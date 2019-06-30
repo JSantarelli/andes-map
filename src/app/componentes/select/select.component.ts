@@ -24,10 +24,4 @@ export class SelectComponent implements OnInit {
     this.childForm.addControl('lat' , new FormControl(''))
     this.childForm.addControl('lng' , new FormControl(''))
   }
-
-  mostrarDato() {
-    this.dato = 4;
-    console.log(this.dato);
-  }
- 
 }

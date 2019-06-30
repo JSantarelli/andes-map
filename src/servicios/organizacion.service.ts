@@ -361,17 +361,17 @@ export class OrganizacionService { private router: Router
       }
     ];
 
-    modulos = [
+    modulos: any[] = [
       { nombre: 'Indice Maestro de Paciente', iniciales: 'mpi' },
       { nombre: 'Reegistro Universal de Prestaciones', iniciales: 'rup' },
       { nombre: 'Centro Inteligente de Turnos y Agendas de Salud', iniciales: 'citas' },
       { nombre: 'Transito Ordenado de Pacientes', iniciales: 'top' },
-      { nombre: 'Historia Unica De Salud', iniciales: 'huds' },
-      { nombre: 'Mapa Asistencial de Salud', iniciales: 'mas' },
-      { nombre: 'Prestamo de Carpetas de Salud', iniciales: 'pres' },
-      { nombre: 'Sistema Integral de Laboratorios', iniciales: 'silab' },
-      { nombre: 'Sistema Integral de Reportes', iniciales: 'sir' },
-      { nombre: 'Aplicacion Para la Salud', iniciales: 'aps' },
+      // { nombre: 'Historia Unica De Salud', iniciales: 'huds' },
+      // { nombre: 'Mapa Asistencial de Salud', iniciales: 'mas' },
+      // { nombre: 'Prestamo de Carpetas de Salud', iniciales: 'pres' },
+      // { nombre: 'Sistema Integral de Laboratorios', iniciales: 'silab' },
+      // { nombre: 'Sistema Integral de Reportes', iniciales: 'sir' },
+      // { nombre: 'Aplicacion Para la Salud', iniciales: 'aps' },
     ]
 
   organizacionList: AngularFireList<any>;
@@ -413,7 +413,7 @@ export class OrganizacionService { private router: Router
         lng: organizacion.lng,
         tipo: organizacion.tipo,
         capacitados: organizacion.capacitados,
-        modulo: organizacion.modulo,
+        modulos: organizacion.modulos,
         mpi: organizacion.mpi,
         rup: organizacion.rup,
         citas: organizacion.citas,
@@ -431,7 +431,7 @@ export class OrganizacionService { private router: Router
         lng: organizacion.lng,
         tipo: organizacion.tipo,
         capacitados: organizacion.capacitados,
-        modulo: organizacion.modulo,
+        modulos: organizacion.modulos,
         mpi: organizacion.mpi,
         rup: organizacion.rup,
         citas: organizacion.citas,
