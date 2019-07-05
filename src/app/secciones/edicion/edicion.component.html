@@ -3,14 +3,17 @@
     <fieldset>
      <legend>Informacion basica</legend>
         <input type="hidden" formControlName="$key" name="$key" >
-        <input type="text" formControlName="nombre" name="nombre" >
-        <input type="text" formControlName="tipo" placeholder="seleccione tipo de organizacion" name="tipo" >
+        <input type="date" formControlName="fecha" name="fecha" >
         <input type="number" formControlName="capacitados" placeholder="Agregue cantidad de capacitados" name="capacitados" >
+        <textarea formControlName="nota" name="nota" id="" cols="30" rows="10" minlength="1" placeholder="Agregar nota"></textarea>
+
         <!-- Select Municipios -->
         <app-select>
 
         </app-select>
     </fieldset>
+
+    <!-- Select Modulos -->
     <fieldset class="checkbox">
       <app-checkbox>
 

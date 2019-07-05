@@ -9,7 +9,7 @@ import { FormControl, FormGroupDirective, ControlContainer, FormBuilder, FormGro
   viewProviders: [{ provide: ControlContainer, useExisting: FormGroupDirective }]
 })
 export class CheckboxComponent implements OnInit {
-  childForm;
+  checkboxForm;
   modulosForm: FormGroup;
   modulos: any[] = [];
 
@@ -20,6 +20,8 @@ export class CheckboxComponent implements OnInit {
     this.modulosForm = this.fb.group({
       modulos: new FormArray(FormControls)
     });
+
+    console.log(this.modulosForm)
   }
 
   submit() {
@@ -27,11 +29,17 @@ export class CheckboxComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.childForm = this.parentF.form;
-    this.childForm.addControl('modulos' , new FormControl(''))
-    this.childForm.addControl('mpi' , new FormControl(''))
-    this.childForm.addControl('top' , new FormControl(''))
-    this.childForm.addControl('citas' , new FormControl(''))
-    this.childForm.addControl('rup' , new FormControl(''))
+    this.checkboxForm = this.parentF.form;
+    this.checkboxForm.addControl('modulos' , new FormControl(''))
+    this.checkboxForm.addControl('mpi' , new FormControl(''))
+    this.checkboxForm.addControl('rup' , new FormControl(''))
+    this.checkboxForm.addControl('citas' , new FormControl(''))
+    this.checkboxForm.addControl('top' , new FormControl(''))
+    this.checkboxForm.addControl('huds' , new FormControl(''))
+    this.checkboxForm.addControl('inter' , new FormControl(''))
+    this.checkboxForm.addControl('carpet' , new FormControl(''))
+    this.checkboxForm.addControl('lab' , new FormControl(''))
+    this.checkboxForm.addControl('repo' , new FormControl(''))
+    this.checkboxForm.addControl('app' , new FormControl(''))
   }
 }

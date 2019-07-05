@@ -22,16 +22,9 @@ export class EdicionComponent implements OnInit {
   organizacionSeleccionada = null;
   organizacionForm = new FormGroup({
     '$key': new FormControl(),
-    'nombre': new FormControl(),
+    'fecha': new FormControl(),
     'capacitados': new FormControl(),
-    'tipo': new FormControl(),
-    'modulos': new FormControl(),
-    'mpi': new FormControl(),
-    'rup': new FormControl(),
-    'top': new FormControl(),
-    'citas': new FormControl(),
-    'lat': new FormControl(),
-    'lng': new FormControl()
+    'nota': new FormControl(),
   })
   searchTerm: string;
 

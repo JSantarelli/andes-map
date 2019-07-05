@@ -11,13 +11,13 @@
           <div class="item-icon icon icon-{{ organizacion.tipo }}"></div>
           <div class="item-bloque-titulo">
             <div class="badge-container start">
-              <span class="badge">{{ organizacion.tipo }}</span>
+              <span class="badge">{{ organizacion.efector.tipo }}</span>
               <span class="badge">{{ organizacion.capacitados }} capacitados</span>
             </div>
   
-            <div class="item-titulo">{{ organizacion.nombre }}</div>
+            <div class="item-titulo">{{ organizacion.nota }}</div>
               <div class="item-bloque-subtitulo">
-                <p class="item-subtitulo {{ organizacion.ubicacion }}">{{ organizacion.ubicacion.nombre }}</p>
+                <p class="item-subtitulo {{ organizacion.municipio }}">{{ organizacion.efector.municipio }}</p>
               </div>
             </div>
             <div class="badge-container end">
