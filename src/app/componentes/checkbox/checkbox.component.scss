@@ -1,8 +1,29 @@
 .contenedor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax( 40px , 1fr ));
-}
+    grid-template-columns: repeat(auto-fill , minmax(40px , 1fr));
 
-.cyan {
-    color: cyan;
+    
+    .cyan {
+        color: cyan;
+    }
+
+    .activo {
+        color: orange;
+    }
+    
+    input[type=checkbox] {
+        display:none;
+
+    }
+    
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+
+        &:hover {
+            color: violet;
+        }
+    }
 }

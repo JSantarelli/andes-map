@@ -12,6 +12,7 @@ export class CheckboxComponent implements OnInit {
   checkboxForm;
   modulosForm: FormGroup;
   modulos: any[] = [];
+  checkbox = true;
 
   constructor( private organizacionService: OrganizacionService, private parentF: FormGroupDirective, private fb: FormBuilder ) {
     this.modulos = organizacionService.getModulos();
