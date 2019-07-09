@@ -12,7 +12,7 @@ export class CheckboxComponent implements OnInit {
   checkboxForm;
   modulosForm: FormGroup;
   modulos: any[] = [];
-  checkbox = true;
+  moduloChecked: boolean = false;
 
   constructor( private organizacionService: OrganizacionService, private parentF: FormGroupDirective, private fb: FormBuilder ) {
     this.modulos = organizacionService.getModulos();
@@ -25,8 +25,8 @@ export class CheckboxComponent implements OnInit {
     console.log(this.modulosForm)
   }
 
-  submit() {
-
+  checkModulo() {
+    this.moduloChecked = !this.moduloChecked;
   }
 
   ngOnInit() {
