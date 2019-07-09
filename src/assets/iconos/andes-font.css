@@ -710,3 +710,27 @@
 .icon-engranaje-outline:before {
   content: "\e081";
 }
+.icon-camion-mezclador:before {
+  content: "\e082";
+}
+.icon-documento-cursor:before {
+  content: "\e083";
+}
+.icon-grafico-torta:before {
+  content: "\e084";
+}
+.icon-logo-provincia:before {
+  content: "\e085";
+}
+.icon-maletin-salud:before {
+  content: "\e086";
+}
+.icon-monitor-estadistica:before {
+  content: "\e087";
+}
+.icon-manos-dinero:before {
+  content: "\e088";
+}
+.icon-paciente-flecha:before {
+  content: "\e089";
+}

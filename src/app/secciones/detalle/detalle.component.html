@@ -1,7 +1,6 @@
-<article id=soloValores (ngSubmit)="onDetalle(organizacionForm)">
-  <input readonly name="nombre" #nombre="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.nombre" >
-  <input readonly name="tipo" #tipo="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.tipo" >
-  <input readonly name="ubicacion" #ubicacion="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.ubicacion" >
-  <input readonly name="capacitados" #capacitados="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.capacitados" >
-</article>
-  
+  <article id=soloValores (ngSubmit)="onDetalle(organizacionForm)">
+    <input readonly name="nombre" #nombre="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.efector.nombre" >
+    <input readonly name="tipo" #tipo="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.efector.tipo" >
+    <input readonly name="ubicacion" #ubicacion="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.efector.ubicacion" >
+    <input readonly name="capacitados" #capacitados="ngModel" [(ngModel)]="organizacionService.selectedOrganizacion.capacitados" >
+  </article>

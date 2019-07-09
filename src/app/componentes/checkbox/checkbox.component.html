@@ -1,8 +1,9 @@
 <legend>Seleccione los modulos implementados en la organizacion</legend>
-    <label *ngFor="let modulo of organizacionService.modulos">
-        <input type="checkbox" name="{{modulo.iniciales}}" formControlName="{{modulo.iniciales}}" value="modulo" >{{ organizacionService.selectedOrganizacion.iniciales }}
-    </label>
-    
+    <div class="contenedor-grid">
+        <label *ngFor="let modulo of organizacionService.modulos">
+            <input type="checkbox" name="{{ modulo.iniciales }}" class="adi icon-{{ modulo.icono }} {{ modulo.color }}" formControlName="{{modulo.iniciales}}" value="modulo" >{{ organizacionService.selectedOrganizacion.iniciales }}
+        </label>
+    </div>
 <!-- <form [formGroup]="modulosForm" >
     <legend>Seleccione los modulos implementados en la organizacion</legend>
     <label formArrayName="modulos" *ngFor="let iniciales of modulosForm.controls['modulos'].controls; let i = index">

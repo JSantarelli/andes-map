@@ -1,0 +1,8 @@
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax( 40px , 1fr ));
+}
+
+.cyan {
+    color: cyan;
+}

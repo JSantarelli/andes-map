@@ -2,63 +2,47 @@
 // $adi-font-path: '~@andes/icons/iconos/';
 // @import '~@andes/icons/scss/andes-icons';
 
+// Layout
+@import './assets/scss/layout';
+
+// Variables
+@import './src/assets/scss/_variables.scss';
+
 // ANDES - Icons
 @import './assets/iconos/andes-font.css';
 
-@import './src/assets/scss/_variables.scss';
 
 // Globales
 body {
     font-family: sans-serif;
 }
 
-li {
-    list-style: none;
-}
-
-// Tipografia
-label {
-    display: block;
-    font-size: 10px;
-    font-weight: bolder;
-}
-
-// Layouting
-main.contenedor {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 5% 95%;
-    // grid-gap: 12px;
-
-    section.navbar {
-        grid-column: 1 / -1;
-        grid-row: 1;
-
-        background-color: $andes-azul-oscuro;
-        color: $andes-azul-oscuro;
-    }
+ul {
+    padding: 0px;
     
-    section.contenedor-principal {
-        grid-column: 1 / 8;
-        grid-row: 2;
-        
-        padding: $padding;
+    li {
+        list-style: none;
     }
-    
-    section.contenedor-lateral {
-        grid-column: 8 / -1;
-        grid-row: 2;
-
-        > app-list  {
-            display: flex;
-            flex-direction: column-reverse;
-                
-        }
-    }
-
 }
 
+
+
+// Items
 .no-icon {
     display: none;
 }
 
+
+// Estilizado layout
+#lateral {
+    padding: 1rem;
+    background-color: $andes-azul-oscuro;
+    color: white;
+
+    input {
+        width: 100%;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,span,legend,label {
+    }
+}

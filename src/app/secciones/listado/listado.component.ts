@@ -71,7 +71,7 @@ export class ListadoComponent implements OnInit {
 
   onEdit(organizacion: Organizacion){
     this.organizacionService.selectedOrganizacion = Object.assign({},organizacion);
-    // this.router.navigate(['/edicion'])
+    this.router.navigate(['/edicion'])
   }
 
   verDetalle(organizacion: Organizacion) {

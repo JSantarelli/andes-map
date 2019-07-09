@@ -1,16 +1,20 @@
 <section>
   <form [formGroup]="organizacionForm" (ngSubmit)="onSubmit(organizacionForm)">
     <fieldset>
-     <legend>Informacion basica</legend>
-        <input type="hidden" formControlName="$key" name="$key" >
-        <input type="date" formControlName="fecha" name="fecha" >
-        <input type="number" formControlName="capacitados" placeholder="Agregue cantidad de capacitados" name="capacitados" >
-        <textarea formControlName="nota" name="nota" id="" cols="30" rows="10" minlength="1" placeholder="Agregar nota"></textarea>
-
-        <!-- Select Municipios -->
+      <legend>Informacion basica</legend>
+      <input type="hidden" formControlName="$key" name="$key" >
+        <!-- Select Efectores -->
         <app-select>
 
         </app-select>
+        <!-- Fecha -->
+        <input type="date" formControlName="fecha" name="fecha" >
+        
+        <!-- Capacitados -->
+        <input type="number" formControlName="capacitados" placeholder="Agregue cantidad de capacitados" name="capacitados" >
+        
+        <!-- Anotaciones -->
+        <textarea formControlName="nota" name="nota" id="" cols="30" rows="10" minlength="1" placeholder="Agregar nota"></textarea>
     </fieldset>
 
     <!-- Select Modulos -->

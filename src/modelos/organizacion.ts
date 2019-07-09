@@ -2,7 +2,6 @@ export class Organizacion {
   $key: string;
   efector: string;
   nombre: string;
-  tipo: string;
   fecha: Date;
   municipio: string;
   lat: number;

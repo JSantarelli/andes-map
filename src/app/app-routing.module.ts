@@ -1,11 +1,10 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListadoComponent } from './secciones/listado/listado.component';
 import { InicioComponent } from './secciones/inicio/inicio.component';
 import { EdicionComponent } from './secciones/edicion/edicion.component';
 import { ItemComponent } from './componentes/lista/item/item.component';
 import { DetalleComponent } from './secciones/detalle/detalle.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: 'inicio' , component: InicioComponent , 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 // Servicio
 import { OrganizacionService } from '../../../servicios/organizacion.service';
@@ -28,7 +29,7 @@ export class EdicionComponent implements OnInit {
   })
   searchTerm: string;
 
-  constructor(private organizacionService: OrganizacionService) { }
+  constructor(private organizacionService: OrganizacionService, private router: Router) { }
 
   
   ngOnInit() {

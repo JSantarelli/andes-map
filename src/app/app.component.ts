@@ -15,12 +15,17 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class AppComponent {
   title = 'andes-map';
   organizacionList: Organizacion[];
-  
+  sidebar = true;
+
+  mostrarSidebar() {
+    this.sidebar = !this.sidebar;
+    console.log(this.sidebar)
+    }
+
   constructor(private organizacionService: OrganizacionService, private firebase: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    
     this.organizacionService.getOrganizaciones()
     .snapshotChanges()
     .subscribe(Item => {

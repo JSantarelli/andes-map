@@ -1,19 +1,28 @@
-<app-friso>
-
-</app-friso>
-
-<router-outlet>
-    <agm-map [latitude]="lat" [longitude]="lng" [styles]="estilosMapa">
-        <ng-container *ngFor="let organizacion of organizacionList">
-            <agm-marker [latitude]="organizacion.lat" [longitude]="organizacion.lng">
-
-                <agm-info-window [disableAutoPan]="true">
-                    {{ organizacion.nombre }}
-                    {{ organizacion.capacitados }}
-                    {{ organizacion.rup }}
-                  </agm-info-window>
-
-            </agm-marker>
-        </ng-container>
-    </agm-map>
-</router-outlet>
+<main id="layout" type="lateral">
+    <ng-container *ngIf="sidebar == true ; then template"></ng-container>
+    <section id="friso">
+        <button type="button" (click)="mostrarSidebar()">Sidebar</button>
+        <app-friso>
+        </app-friso>
+    </section>
+    <section id="mapa">
+        <agm-map [latitude]="lat" [longitude]="lng" [styles]="estilosMapa">
+            <ng-container *ngFor="let organizacion of organizacionList">
+                <agm-marker [latitude]="organizacion.efector.lat" [longitude]="organizacion.efector.lng">
+                    <agm-info-window [disableAutoPan]="true">
+                        {{ organizacion.nombre }}
+                        {{ organizacion.capacitados }}
+                        {{ organizacion.rup }}
+                    </agm-info-window>
+                </agm-marker>
+            </ng-container>
+        </agm-map>
+    </section>
+        <ng-template #template> 
+        <section id="lateral">
+                <router-outlet>
+                    
+                </router-outlet>
+            </section>
+        </ng-template>
+</main>
