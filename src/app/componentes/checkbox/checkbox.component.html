@@ -1,7 +1,13 @@
 <legend>Seleccione los modulos implementados en la organizacion</legend>
     <!-- Item activo con ngStyle -->
     <div class="contenedor-grid">
-        <label *ngFor="let modulo of organizacionService.modulos" class="adi icon-{{ modulo.icono }} {{ modulo.color }}" [style.color]="moduloChecked ? 'green' : 'red'">
-            <input type="checkbox" name="{{ modulo.iniciales }}" formControlName="{{modulo.iniciales}}" value="modulo" (click)="checkModulo()">{{ organizacionService.selectedOrganizacion.iniciales }}
+        <label *ngFor="let modulo of organizacionService.modulos" class="adi icon-{{ modulo.icono }} border {{ modulo.color }}" >
+            <input type="checkbox" name="{{ modulo.iniciales }}" formControlName="{{modulo.iniciales}}" value="modulo" [checked]="modulo.iniciales">{{ organizacionService.selectedOrganizacion.iniciales }}
         </label>
     </div>
+
+    <!-- Input desde .scss -->
+    <!-- <div class="checkbox adi icon-{{ modulo.icono }} {{ modulo.color }}" *ngFor="let modulo of organizacionService.modulos">
+        <input type="checkbox" id="modulo" name="{{ modulo.iniciales }}" formControlName="{{modulo.iniciales}}" value="modulo">{{ organizacionService.selectedOrganizacion.iniciales }}
+        <label for="modulo"></label>
+    </div> -->

@@ -1,29 +1,87 @@
+$colorMpi: #00a8e0;
+$colorRup: #f15a24;
+$colorCitas: #e3007e;
+$colorTop: #982f98;
+$colorHuds: #0071bc;
+$colorInter: #9e005d;
+$colorCarpet: #a67c52;
+$colorLab: #00b9b1;
+$colorRepo: #f4a03b;
+$colorApp: #26bbef;
+
 .contenedor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(40px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(50px , 1fr));
 
-    
-    .cyan {
-        color: cyan;
+    // Colores modulos
+    .border {
+        border: 2px solid;
     }
 
+    .colorMpi {
+        color: $colorMpi;
+    }
+    
+    .colorRup {
+        color: $colorRup;
+    }
+    
+    .colorCitas {
+        color: $colorCitas;
+    }
+    
+    .colorTop {
+        color: $colorTop;
+    }
+    
+    .colorHuds {
+        color: $colorHuds;
+    }
+    
+    .colorInter {
+        color: $colorInter;
+    }
+    
+    .colorCarpet{
+        color: $colorCarpet;
+    }
+    
+    .colorLab {
+        color: $colorLab;
+    }
+    
+    .colorRepo {
+        color: $colorRepo;
+    }
+    
+    .colorApp {
+        color: $colorApp;
+    }
+
+    // Estados modulos
     .activo {
         color: orange;
     }
     
-    input[type=checkbox] {
-        display:none;
-
-    }
-    
+    // Override checkboxes
     label {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        
+        margin: 5px;
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+        border-radius: 50%;
+
 
         &:hover {
-            color: violet;
+            mix-blend-mode: screen;
+        }
+
+        input[type=checkbox] {
+            visibility: hidden;
         }
     }
 }

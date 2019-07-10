@@ -478,16 +478,16 @@ export class OrganizacionService { private router: Router
     ];
 
     modulos: any[] = [
-      { nombre: 'Indice Maestro de Paciente', iniciales: 'mpi', icono: 'credencial-paciente' , color: 'cyan' },
-      { nombre: 'Reegistro Universal de Prestaciones', iniciales: 'rup', icono: 'documento-cursor' , color: 'cyan'},
-      { nombre: 'Centro Inteligente de Turnos y Agendas de Salud', iniciales: 'citas', icono: 'turno-tilde' , color: 'cyan' },
-      { nombre: 'Transito Ordenado de Pacientes', iniciales: 'top', icono: 'paciente-flecha' , color: 'cyan'},
-      { nombre: 'Historia Unica De Salud', iniciales: 'huds', icono: 'historial' , color: 'cyan' },
-      { nombre: 'Mapa Asistencial de Salud', iniciales: 'inter', icono: 'cama-paciente' , color: 'cyan' },
-      { nombre: 'Prestamo de Carpetas de Salud', iniciales: 'carpet', icono: 'documento-paciente' , color: 'cyan' },
-      { nombre: 'Sistema Integral de Laboratorios', iniciales: 'lab', icono: 'recipiente' , color: 'cyan' },
-      { nombre: 'Sistema Integral de Reportes', iniciales: 'repo', icono: 'documento-tilde' , color: 'cyan' },
-      { nombre: 'Aplicacion Para la Salud', iniciales: 'app', icono: 'celular' , color: 'cyan' },
+      { nombre: 'Indice Maestro de Paciente', iniciales: 'mpi', icono: 'credencial-paciente' , color: 'colorMpi' },
+      { nombre: 'Reegistro Universal de Prestaciones', iniciales: 'rup', icono: 'documento-cursor' , color: 'colorRup'},
+      { nombre: 'Centro Inteligente de Turnos y Agendas de Salud', iniciales: 'citas', icono: 'turno-tilde' , color: 'colorCitas' },
+      { nombre: 'Transito Ordenado de Pacientes', iniciales: 'top', icono: 'paciente-flecha' , color: 'colorTop'},
+      { nombre: 'Historia Unica De Salud', iniciales: 'huds', icono: 'historial' , color: 'colorHuds' },
+      { nombre: 'Mapa Asistencial de Salud', iniciales: 'inter', icono: 'cama-paciente' , color: 'colorInter' },
+      { nombre: 'Prestamo de Carpetas de Salud', iniciales: 'carpet', icono: 'documento-paciente' , color: 'colorCarpet' },
+      { nombre: 'Sistema Integral de Laboratorios', iniciales: 'lab', icono: 'recipiente' , color: 'colorLab' },
+      { nombre: 'Sistema Integral de Reportes', iniciales: 'repo', icono: 'documento-tilde' , color: 'colorRepo' },
+      { nombre: 'Aplicacion Para la Salud', iniciales: 'app', icono: 'celular' , color: 'colorApp' },
     ]
 
   organizacionList: AngularFireList<any>;
