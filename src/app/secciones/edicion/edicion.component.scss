@@ -1,0 +1,30 @@
+input, textarea, select, hr {
+    border-radius: 5px;
+    &.w-100 {
+        width: 100%;
+    }
+    
+    &.w-50 {
+        width: 50%;
+    }
+}
+
+#altaImplementacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.flex-h {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

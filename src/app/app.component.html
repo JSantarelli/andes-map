@@ -1,6 +1,6 @@
 <main id="layout" type="lateral">
     <ng-container *ngIf="sidebar == true ; then template"></ng-container>
-    <section id="friso">
+    <section id="friso" class="flex-h">
         <button type="button" (click)="mostrarSidebar()">Sidebar</button>
         <app-friso>
         </app-friso>

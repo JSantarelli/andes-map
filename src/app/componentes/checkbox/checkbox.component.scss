@@ -11,7 +11,8 @@ $colorApp: #26bbef;
 
 .contenedor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(50px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(60px , 1fr));
+    grid-gap: 20px;
 
     // Colores modulos
     .border {
@@ -68,10 +69,10 @@ $colorApp: #26bbef;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+        font-size: 1.8rem;
         margin: 5px;
-        width: 15px;
-        height: 15px;
+        width: 28px;
+        height: 28px;
         padding: 10px;
         border-radius: 50%;
 
@@ -82,6 +83,12 @@ $colorApp: #26bbef;
 
         input[type=checkbox] {
             visibility: hidden;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            margin: 0;
         }
     }
 }
