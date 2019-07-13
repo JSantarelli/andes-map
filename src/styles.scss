@@ -15,6 +15,7 @@
 // Globales
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 ul {
@@ -25,7 +26,43 @@ ul {
     }
 }
 
+.border {
+    border: 2px solid;
+}
 
+.rounded {
+    border-radius: 25px;
+    padding: 10px;
+}
+
+// Estilizado layout
+div.wrapper {
+    background-image: $andes-degrade;
+}
+
+#lateral {
+    padding: 1rem;
+    background-color: $andes-azul-oscuro;
+    color: white;
+
+    h5 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.botonera {
+    height: 5vh;
+}
+
+// Componentes
+select, input {
+    width: auto;
+    height: 25px;
+
+    &#capacitados {
+        width: 75px;
+    }
+}
 
 // Items
 .no-icon {
@@ -34,7 +71,9 @@ ul {
 
 %baseButton {
     height: 2rem;
-    border-radius: 20px;
+    width: fit-content;
+    max-width: 100px;
+    border-radius: 15px;
     color: white;
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -43,37 +82,64 @@ ul {
     border: none;
 }
 
+
+// Botones
 button {
     @extend %baseButton;
-    
-    &:first-child {
-        margin-right: 10px;
-    }
+}
+
+.badge {
+    border: solid 1px $andes-azul;
+    padding: 5px;
+    text-transform: uppercase;
+    color: $andes-azul;
+    font-size: .5rem;
 }
 
 .success {
     @extend %baseButton;
-    background: green;
+    background: $andes-verde;
 }
 
 .warning {
     @extend %baseButton;
-    background: orange;
+    background: $andes-naranja;
 }
 
 
+.danger {
+    @extend %baseButton;
+    background: $andes-magenta;
+}
 
-// Estilizado layout
-#lateral {
-    padding: 1rem;
-    background-color: $andes-azul-oscuro;
-    color: white;
+.info {
+    @extend %baseButton;
+    background: $andes-azul;
+}
 
-    input {
-        width: 100%;
-    }
 
-    h5 {
-        margin-bottom: 0.5rem;
-    }
+// Disposicion
+.flex-h {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.items-end {
+    align-items: flex-end;
 }

@@ -12,13 +12,9 @@ $colorApp: #26bbef;
 .contenedor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(60px , 1fr));
-    grid-gap: 20px;
+    grid-gap: 5px;
 
     // Colores modulos
-    .border {
-        border: 2px solid;
-    }
-
     .colorMpi {
         color: $colorMpi;
     }
@@ -67,12 +63,13 @@ $colorApp: #26bbef;
     // Override checkboxes
     label {
         display: flex;
+        // justify-content: center;
         flex-direction: column;
         align-items: center;
-        font-size: 1.8rem;
-        margin: 5px;
-        width: 28px;
-        height: 28px;
+        font-size: 1.5rem;
+        margin: 0 0 25px 0;
+        width: 25px;
+        height: 25px;
         padding: 10px;
         border-radius: 50%;
 
@@ -88,7 +85,7 @@ $colorApp: #26bbef;
         p {
             text-transform: uppercase;
             font-size: 0.7rem;
-            margin: 0;
+            // margin-bottom: 10px;
         }
     }
 }

@@ -1,0 +1,17 @@
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .item {
+
+    }
+    
+    .badge-nota {
+        color: yellowgreen;
+        font-size: 0.5rem;
+        padding: 5px;
+        border: solid 2px yellowgreen;
+    }
+}

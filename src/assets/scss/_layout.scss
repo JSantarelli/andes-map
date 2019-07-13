@@ -1,23 +1,24 @@
 @import './variables';
 #layout[type=lateral] {
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(700px , 1fr));
-    grid-template-rows: 40px 100%;
+    grid-template-columns: repeat(auto-fit , minmax(60vw , 1fr));
+    grid-template-rows: auto auto;
 };
 
 #friso {
     grid-column: 1 / -1;
     grid-row: 1;
-    background-color: burlywood;
+    background-color: white;
+    opacity: .25;
 }
 
 #mapa {
     grid-column: 1;
     grid-row: 2;
-    background-color: silver;
+    mix-blend-mode: luminosity;
 }
 
 #lateral {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1 / -1;
 }

@@ -5,6 +5,7 @@
         <app-friso>
         </app-friso>
     </section>
+    <div class="wrapper">
     <section id="mapa">
         <agm-map [latitude]="lat" [longitude]="lng" [styles]="estilosMapa">
             <ng-container *ngFor="let organizacion of organizacionList">
@@ -18,6 +19,7 @@
             </ng-container>
         </agm-map>
     </section>
+    </div>
         <ng-template #template> 
         <section id="lateral">
                 <router-outlet>

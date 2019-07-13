@@ -8,30 +8,30 @@
     <!-- Listado -->
       <ul *ngFor="let organizacion of organizacionList | organizacion: searchTerm">
         <li class="item">
-          <div class="item-icon icon icon-{{ organizacion.tipo }}"></div>
-          <div class="item-bloque-titulo">
-            <div class="badge-container start">
-              <span class="badge">{{ organizacion.efector.tipo }}</span>
-              <span class="badge">{{ organizacion.capacitados }} capacitados</span>
-            </div>
-  
-            <div class="item-titulo">{{ organizacion.nota }}</div>
-              <div class="item-bloque-subtitulo">
-                <p class="item-subtitulo {{ organizacion.municipio }}">{{ organizacion.efector.municipio }}</p>
+          <div class="adi icon-hospital border rounded"></div>
+            <div class="flex-v">  
+                <!-- Badge -->
+                <div class="flex-h justify-start">
+                  <span class="badge">{{ organizacion.efector.tipo }}</span>
+                  <span class="badge">{{ organizacion.capacitados }} capacitados</span>
+                  <div class="" [ngClass]="organizacion.nota ? 'badge-nota' : 'no-icon'"><i class="adi" [ngClass]="'icon-documento'"></i></div>
+                </div>
+      
+                    <p class="item-subtitulo {{ organizacion.municipio }}">{{ organizacion.efector.municipio }}</p>
+                
+            </div>              
+              <!-- Binding de iconos -->
+              <div class="flex-h">
+                <!-- <div class="" [ngClass]="organizacion.mpi ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.mpi ? 'icon-mano-corazon' : ''"></i></div>
+                <div class="" [ngClass]="organizacion.citas ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.citas ? 'icon-turno' : ''"></i></div>
+                <div class="" [ngClass]="organizacion.rup ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.rup ? 'icon-hallazgo' : ''"></i></div>
+                <div class="" [ngClass]="organizacion.top ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.top ? 'icon-hombre-caminando' : ''"></i></div> -->
+
+              <!-- Botonera -->
+                <button class="editar warning" (click)="onEdit(organizacion)"><i class="icon-lapiz"></i></button>
+                <button class="ver success" (click)="verDetalle(organizacion)"><i class="icon-informacion"></i></button>
+                <button class="borrar danger" (click)="onDelete(organizacion.$key)"><i class="icon-cruz"></i></button>
               </div>
-            </div>
-            <div class="badge-container end">
-              
-            <!-- Binding de iconos -->
-              <div class="" [ngClass]="organizacion.mpi ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.mpi ? 'icon-mano-corazon' : ''"></i></div>
-              <div class="" [ngClass]="organizacion.citas ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.citas ? 'icon-turno' : ''"></i></div>
-              <div class="" [ngClass]="organizacion.rup ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.rup ? 'icon-hallazgo' : ''"></i></div>
-              <div class="" [ngClass]="organizacion.top ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.top ? 'icon-hombre-caminando' : ''"></i></div>
-              
-              <button class="editar" (click)="onEdit(organizacion)"><i class="icon-lapiz"></i></button>
-              <button class="ver" (click)="verDetalle(organizacion)"><i class="icon-informacion"></i></button>
-              <button class="borrar" (click)="onDelete(organizacion.$key)"><i class="icon-cruz"></i></button>
-          </div>                
           </li>
       </ul>
     </router-outlet>

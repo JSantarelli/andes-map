@@ -16,15 +16,3 @@ input, textarea, select, hr {
     height: 100%;
 }
 
-.flex-h {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-v {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
