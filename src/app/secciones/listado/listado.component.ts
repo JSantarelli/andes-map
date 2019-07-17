@@ -11,12 +11,14 @@ import { Organizacion } from '../../../modelos/organizacion';
   styleUrls: ['./listado.component.scss']
 })
 export class ListadoComponent implements OnInit {
-  
+  modulos: boolean = false;
+
+  verModulos() {
+    this.modulos = !this.modulos;
+  }
+
   // Hardcoding
   mostrar = false;
-
-  modulos = [ 'mpi' , 'citas' , 'rup' , 'top' ];
-
   hide() {
     this.mostrar = false;
   }

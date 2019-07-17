@@ -38,9 +38,8 @@ export class AppComponent {
     }) 
   }
 
-  // google maps zoom level
+  // parametros iniciales google maps 
   zoom: number = 8;
-  
   lat: number = -38.9411509;
   lng: number = -68.255485;
   

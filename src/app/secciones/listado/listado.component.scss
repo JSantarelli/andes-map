@@ -5,13 +5,22 @@ li {
     align-items: center;
 
     .item {
+        border-bottom: solid 1px white;
 
+        .icon {
+            margin-left: 1rem;
+
+        .item-subtitulo {
+            font-size: 0.5rem;
+            color: lightblue;
+        }
+        }
     }
     
     .badge-nota {
         color: yellowgreen;
         font-size: 0.5rem;
-        padding: 5px;
+        padding: 3px;
         border: solid 2px yellowgreen;
     }
 }

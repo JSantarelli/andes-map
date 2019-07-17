@@ -56,13 +56,25 @@ div.wrapper {
 
 // Componentes
 select, input {
-    width: auto;
+    width: 100%;
     height: 25px;
 
     &#capacitados {
         width: 75px;
     }
 }
+
+input, textarea, select, hr {
+    border-radius: 5px;
+    &.w-100 {
+        width: 100%;
+    }
+    
+    &.w-50 {
+        width: 50%;
+    }
+}
+
 
 // Items
 .no-icon {

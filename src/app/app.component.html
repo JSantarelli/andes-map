@@ -1,9 +1,15 @@
 <main id="layout" type="lateral">
     <ng-container *ngIf="sidebar == true ; then template"></ng-container>
     <section id="friso" class="flex-h">
-        <button type="button" (click)="mostrarSidebar()">Sidebar</button>
-        <app-friso>
-        </app-friso>
+        <div class="flex-h">
+            <img src="" class="adi icon-andes" alt="">
+            <h4>ANDES | Mapa de Implementacion</h4>
+        </div>
+        <nav>
+            <a (click)="mostrarSidebar()">Inicio</a>
+            <a routerLink="/listado">Listado</a>
+            <a routerLink="/edicion">Edicion</a>
+        </nav>
     </section>
     <div class="wrapper">
     <section id="mapa">

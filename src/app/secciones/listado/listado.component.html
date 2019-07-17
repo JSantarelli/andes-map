@@ -1,14 +1,16 @@
 <section>
 <router-outlet>  
-    <h3>Organizaciones</h3>
-  
+    <header class="flex-h">
+      <h3>Listado organizaciones</h3>
+    </header>
+    <hr class="w-100">  
     <!-- Busqueda & Filtro -->
     <input type="text" class="form-control" placeholder="Buscar o filtrar organizaciones" [(ngModel)]="searchTerm"/>
     
     <!-- Listado -->
       <ul *ngFor="let organizacion of organizacionList | organizacion: searchTerm">
-        <li class="item">
-          <div class="adi icon-hospital border rounded"></div>
+        <li accordion class="item">
+          <div class="adi icon-{{ organizacion.efector.tipo }} border rounded"></div>
             <div class="flex-v">  
                 <!-- Badge -->
                 <div class="flex-h justify-start">
@@ -17,23 +19,32 @@
                   <div class="" [ngClass]="organizacion.nota ? 'badge-nota' : 'no-icon'"><i class="adi" [ngClass]="'icon-documento'"></i></div>
                 </div>
       
-                    <p class="item-subtitulo {{ organizacion.municipio }}">{{ organizacion.efector.municipio }}</p>
+                  <p class="item-subtitulo {{ organizacion.municipio }}">{{ organizacion.efector.municipio }}</p>
                 
             </div>              
-              <!-- Binding de iconos -->
-              <div class="flex-h">
-                <!-- <div class="" [ngClass]="organizacion.mpi ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.mpi ? 'icon-mano-corazon' : ''"></i></div>
-                <div class="" [ngClass]="organizacion.citas ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.citas ? 'icon-turno' : ''"></i></div>
-                <div class="" [ngClass]="organizacion.rup ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.rup ? 'icon-hallazgo' : ''"></i></div>
-                <div class="" [ngClass]="organizacion.top ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.top ? 'icon-hombre-caminando' : ''"></i></div> -->
+            
+            <!-- Botonera -->
+            <button class="warning" (click)="onEdit(organizacion)"><i class="icon-lapiz"></i></button>
+            <button class="success" (click)="verDetalle(organizacion)"><i class="icon-informacion"></i></button>
+            <button class="danger" (click)="onDelete(organizacion.$key)"><i class="icon-cruz"></i></button>
+            <button class="info"  (click)="verModulos()"><i class="adi icon-flecha"></i></button>
 
-              <!-- Botonera -->
-                <button class="editar warning" (click)="onEdit(organizacion)"><i class="icon-lapiz"></i></button>
-                <button class="ver success" (click)="verDetalle(organizacion)"><i class="icon-informacion"></i></button>
-                <button class="borrar danger" (click)="onDelete(organizacion.$key)"><i class="icon-cruz"></i></button>
-              </div>
           </li>
+          <!-- Iconos modulos -->
+            <div class="flex-h" *ngIf="modulos == false" >
+              <div class="border rounded" [ngClass]="organizacion.mpi ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.mpi ? 'icon-credencial-paciente' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.rup ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.rup ? 'icon-documento-cursor' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.citas ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.citas ? 'icon-turno-tilde' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.top ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.top ? 'icon-paciente-flecha' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.huds ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.huds ? 'icon-historial' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.inter ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.inter ? 'icon-cama-paciente' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.carpet ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.carpet ? 'icon-documento-paciente' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.lab ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.lab ? 'icon-recipiente' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.repo ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.repo ? 'icon-documento-tilde' : ''"></i></div>
+              <div class="border rounded" [ngClass]="organizacion.app ? 'badge-modulos' : 'no-icon'"><i class="adi" [ngClass]="organizacion.app ? 'icon-celular' : ''"></i></div>
+            </div>
+            <hr class="w-100">
       </ul>
     </router-outlet>
-  </section>
+  </section>  
 

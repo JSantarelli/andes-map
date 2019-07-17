@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrisoComponent implements OnInit {
 
+  sidebar = true;
+
+  mostrarSidebar() {
+    this.sidebar = !this.sidebar;
+    console.log(this.sidebar)
+    }
+
+
   constructor() { }
 
   ngOnInit() {
