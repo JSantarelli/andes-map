@@ -51,7 +51,7 @@ import { AgmCoreModule } from '@agm/core';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyBRVMV1sSrmpq_MeeVsosxwMKZ-xrOl8Co',
+      apiKey:'',
    })
   ],
   providers: [

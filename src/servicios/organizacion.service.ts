@@ -493,9 +493,9 @@ export class OrganizacionService { private router: Router
   organizacionList: AngularFireList<any>;
   selectedOrganizacion: Organizacion = new Organizacion();
   organizaciones: any[] = [
-    {
-      nombre: 'Heller',
-    }
+    // {
+    //   nombre: 'Heller',
+    // }
   
   ];
 
